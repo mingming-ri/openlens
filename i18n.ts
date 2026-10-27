@@ -71,11 +71,11 @@ const en = {
   showGuide: 'How OpenLens works',
   moreTips: 'More tips',
   tips: (ai: boolean): [string, string][] => [
-    ['Crop:', 'choose “I’ll crop” to read just part of an image, or “Automatic” to trim empty edges.'],
+    ['Crop:', 'choose “I\'ll crop” to read just part of an image, or “Automatic” to trim empty edges.'],
     ['Mixing up I and 1, or S and $?', 'Under Scan settings, set The image has to Only words or Only numbers. Fix likely mistakes also swaps non-words for the real word they look like.'],
     ['High accuracy', 'makes fewer mistakes, but downloads larger files the first time you use each language.'],
     ['Bubble or decorative lettering', `is hard to read. Unsure words are underlined with other readings to choose from${ai ? ', and you can ask AI to read a single word.' : '.'}`],
-    ...(ai ? [['Hard pictures:', 'use Read with AI for blurry photos or handwriting, or Describe the picture when there’s no text. These send the image to an AI service.'] as [string, string]] : []),
+    ...(ai ? [['Hard pictures:', 'use Read with AI for blurry photos or handwriting, or Describe the picture when there\'s no text. These send the image to an AI service.'] as [string, string]] : []),
     ['Keyboard:', 'press Escape to stop reading. Paste an image anywhere with Ctrl+V (⌘V on Mac).'],
     ['Display:', 'app language, text size, contrast and light or dark mode are at the top of the page and are remembered on this device.'],
   ],
@@ -162,7 +162,7 @@ const en = {
   placeholder: 'The text from your image will appear here, ready to read aloud.',
   typeInstead: 'Type or paste text instead',
   hintLooksLike: (suggested: string, current: string) => `This looks like ${suggested}, not ${current}.`,
-  hintNotLike: (current: string) => `This doesn’t look like ${current}. Is the text in another language?`,
+  hintNotLike: (current: string) => `This doesn\'t look like ${current}. Is the text in another language?`,
   switchRescan: 'Switch & rescan',
   changeLanguage: 'Change language',
   dismissHint: 'Dismiss language suggestion',
@@ -184,13 +184,13 @@ const en = {
   readingsFor: 'Possible readings for',
   closeChoices: 'Close word choices',
   asScanned: '(as scanned)',
-  autoChanged: (w: string) => `Changed automatically because “${w}” isn’t a word. Pick it to undo.`,
+  autoChanged: (w: string) => `Changed automatically because “${w}” isn\'t a word. Pick it to undo.`,
   typeYourself: 'Type the word yourself',
   orType: 'Or type it…',
   use: 'Use',
   askAi: (p: string) => `Ask ${p}`,
   asking: 'Asking…',
-  aiWordError: 'Couldn’t get an AI reading for this word. Try again, or pick one above.',
+  aiWordError: 'Couldn\'t get an AI reading for this word. Try again, or pick one above.',
 
   // Read aloud
   noSpeech: "This browser can't read text aloud. Try a recent version of Chrome, Edge, Safari or Firefox.",
@@ -208,11 +208,11 @@ const en = {
   describeTitle: 'Describe the picture',
   aiOptional: 'AI · optional',
   describeHint: (p: string) =>
-    `Sends a smaller copy of this image to ${p} for a description. AI can make mistakes, so don’t rely on it for safety, medical or money decisions.`,
+    `Sends a smaller copy of this image to ${p} for a description. AI can make mistakes, so don\'t rely on it for safety, medical or money decisions.`,
   describing: 'Describing…',
   describeImage: 'Describe image',
   addToText: 'Add to text box',
-  describeFailed: 'Couldn’t describe this image right now. Please try again later.',
+  describeFailed: 'Couldn\'t describe this image right now. Please try again later.',
   announceDescribing: 'Describing image…',
   announceDescribed: 'Description ready.',
 
@@ -233,12 +233,12 @@ const en = {
 
   // Errors
   waitCurrent: 'Please wait for the current image to finish.',
-  fileType: (name: string) => `“${name}” isn’t an image this app can read. Try a PNG, JPEG, WebP, GIF or BMP.`,
+  fileType: (name: string) => `“${name}” isn\'t an image this app can read. Try a PNG, JPEG, WebP, GIF or BMP.`,
   fileEmpty: (name: string) => `“${name}” is empty. Please choose another image.`,
   fileSize: (name: string, size: string, limit: string) => `“${name}” is ${size}. The limit is ${limit}.`,
-  ocrOffline: 'You’re offline. The first scan needs a connection to download text recognition.',
-  ocrHigh: 'Couldn’t read this image. The high-accuracy files may have failed to download. Try again, or switch Accuracy to Standard.',
-  ocrGeneric: 'Couldn’t read this image. Check your connection and try again.',
+  ocrOffline: 'You\'re offline. The first scan needs a connection to download text recognition.',
+  ocrHigh: 'Couldn\'t read this image. The high-accuracy files may have failed to download. Try again, or switch Accuracy to Standard.',
+  ocrGeneric: 'Couldn\'t read this image. Check your connection and try again.',
 
   // Progress
   status: {

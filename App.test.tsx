@@ -6,7 +6,15 @@ import { recognizeImage } from './ocr';
 import { aiReadText, getAiStatus } from './describe';
 
 // Tesseract and the AI service are replaced with fakes, so tests are fast and need no network.
-vi.mock('./ocr', () => ({ recognizeImage: vi.fn(), terminateOcr: vi.fn() }));
+vi.mock('./ocr', () => ({
+  recognizeImage: vi.fn(),
+  terminateOcr: vi.fn(),
+  OcrError: class OcrError extends Error {
+    constructor(public code: 'offline' | 'high' | 'generic') {
+      super(code);
+    }
+  },
+}));
 vi.mock('./smart', async (orig) => ({ ...(await orig<typeof import('./smart')>()), loadDictionary: vi.fn(async () => null) }));
 vi.mock('./describe', () => ({
   getAiStatus: vi.fn(async () => ({ enabled: false })),
@@ -77,7 +85,7 @@ describe('App', () => {
     mockedRecognize.mockResolvedValueOnce({ text: '', confidence: 0 });
     render(<App />);
     upload(image());
-    expect(await screen.findByText(/no text found/i)).toBeInTheDocument();
+    expect((await screen.findAllByText(/no text found/i)).length).toBeGreaterThan(0);
   });
 
   it('lets you type text to read aloud', async () => {
